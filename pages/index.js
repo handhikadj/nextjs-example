@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import CustomButton from "../components/CustomButton";
+import CustomInput from "../components/CustomInput";
 import Showcase from "../components/Showcase";
 
 
@@ -9,6 +10,7 @@ const Home = () => {
     const [pakestate, setPakestate] = useState('');
 
     const apabae = e => setPakestate('anjing');
+    const changeTheState = e => setPakestate(e.target.value);
 
     useEffect(() => {
         console.log(pakestate)
@@ -26,6 +28,8 @@ const Home = () => {
             { pakestate || "apabae" }
 
             <Showcase/>
+
+            <CustomInput changing={ changeTheState }/>
 
             <CustomButton
                 actiondong={ apabae }
